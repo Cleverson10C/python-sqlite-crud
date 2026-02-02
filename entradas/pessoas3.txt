@@ -1,0 +1,3 @@
+Raquel,50
+Gabriel,12
+Bianca,10

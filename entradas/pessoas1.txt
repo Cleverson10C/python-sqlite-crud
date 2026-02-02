@@ -1,0 +1,3 @@
+João,60
+Maria,30
+Pedro,17
