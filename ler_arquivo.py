@@ -1,8 +1,8 @@
 def ler_arquivo(caminho_arquivo):
     dados = []
     try:
-        with open(caminho_arquivo, "r", encoding="utf-8") as f:
-            for linha in f:
+        with open(caminho_arquivo, "r", encoding="utf-8") as file:
+            for linha in file:
                 try:
                     nome, idade = linha.strip().split(",")
                     dados.append({"nome": nome, "idade": int(idade)})
