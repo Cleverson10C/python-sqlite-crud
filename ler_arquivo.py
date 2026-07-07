@@ -13,3 +13,4 @@ def ler_arquivo(caminho_arquivo):
     except Exception as e:
         print(f"Erro inesperado ao ler {caminho_arquivo}: {e}")
     return dados
+

@@ -1,7 +1,20 @@
 from database import conectar
 
-def inserir_pessoa(nome, idade, classificacao):
-    
+
+def salvar_em_arquivo(nome, idade, classificacao, caminho="pessoas.txt"):
+    try:
+        with open(caminho, "a", encoding="utf-8") as file:
+            file.write(f"{nome},{idade},{classificacao}\n")
+    except Exception as e:
+        print(f"Erro ao gravar em arquivo: {e}")
+
+
+def inserir_pessoas(nome, idade, classificacao):
+    try:
+        idade = int(idade)
+    except ValueError:
+        print("Idade inválida. Por favor, digite um número.")
+        return
     
     conn = conectar()
     cursor = conn.cursor()
@@ -13,6 +26,8 @@ def inserir_pessoa(nome, idade, classificacao):
 
     conn.commit()
     conn.close()
+
+    salvar_em_arquivo(nome, idade, classificacao)
     
     
 def atualizar_idade(id_pessoa, nova_idade):
